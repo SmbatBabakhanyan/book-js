@@ -1,0 +1,152 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Learn Js</title>
+</head>
+
+<body>
+
+    <script>
+        //task 1
+        function max(a, b, c) {
+            let max = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                if (max < arguments[i]) {
+                    max = arguments[i];
+                }
+            }
+            console.log(max);
+        };
+        //  max(5, 6, -156);
+        //task 2
+        function min(a, b, c) {
+            let min = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                if (min > arguments[i]) {
+                    min = arguments[i];
+                }
+            }
+            console.log(min);
+        };
+        //  min(5, 6, -156);
+
+        //task 3.1
+        function test(a, b, c) {
+            for (let i = 0; i < arguments.length; i++) {
+                if (arguments[i] === 1) {
+                    console.log(true);
+                    return;
+                }
+            }
+            console.log(false);
+        };
+        //  test(9, 5, -1);
+        //task3 version 2
+
+        function test2() {
+            for (let i = 0; i < arguments.length; i++) {
+                if (arguments[i] === 1) {
+                    console.log(true);
+                    return;
+                }
+                if (i === arguments.length - 1) {
+                    console.log(false);
+                }
+
+            }
+        };
+        // test2(5, 1, 3);
+        //task 4
+        const arr = [5, 6, 5, 9, 3, 2];
+        function test4(arr) {
+            let countOf2 = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === 2) {
+                    countOf2++;
+                }
+                if (countOf2 > 2) return false;
+            }
+
+            return countOf2 === 2;
+        }
+        //   console.log(test4(arr));
+
+
+        //test 5
+        function test5(a, b, c) {
+            let triangleCount = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                triangleCount += arguments[i];
+                if (triangleCount === 180) {
+                    console.log("y=1");
+                    return;
+                }
+            }
+            console.log("y=2");
+        }
+        //  test5(90, 10, 80)
+        //test6
+        function test6(a, b, c) {
+            for (let i = 0; i < arguments.length; i++) {
+                if (arguments[i] % 2 === 0 && arguments[i] !== 0) {
+                    console.log("1");
+                    return;
+                }
+            }
+            console.log("2");
+        }
+        //  test6(4, 9, 9);
+
+        //test 7
+        function test7(a, b, c) {
+            let count = arguments[1] - arguments[0];
+            let result;
+            for (let i = 1; i < arguments.length; i++) {
+                result = arguments[i - 1] + count === arguments[i];
+            }
+            return result === true ? true : false;;
+        }
+        //  console.log(test7(-5, 0, 15));
+
+
+        //test8
+        function test8(a, b, c) {
+            let count = arguments[1] / arguments[0];
+            let result;
+            for (let i = 1; i < arguments.length; i++) {
+                result = arguments[i - 1] * count === arguments[i];
+            }
+            return result === true ? true : false;;
+        }
+        // console.log(test8(2,4,8));
+
+        //test 9
+        function test9(a, b, c) {
+            const number = [];
+            for (let i = 0; i < arguments.length; i++) {
+                number.push(arguments[i]);
+            }
+            number.sort(function (x, y) {
+                return x - y;
+            });
+            console.log(number);
+        }
+      //  test9(5, 90, 10, -80);
+
+        // test 10
+        function test10(a, b, c) {
+            const number = [];
+            for (let i = 0; i < arguments.length; i++) {
+                number.push(arguments[i]);
+            }
+            number.sort(function (x, y) {
+                return y - x;
+            });
+            console.log(number);
+        }
+        test10(5, 90, 10, -80);
+    </script>
+</body>
+
+</html>
